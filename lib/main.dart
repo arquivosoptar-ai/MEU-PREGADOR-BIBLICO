@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'features/sermon_generator/book_list_page.dart';
+import 'features/livros/livros_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const PregadorBiblicoApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PregadorBiblicoApp extends StatelessWidget {
+  const PregadorBiblicoApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Pregador Bíblico',
-      home: const BookListPage(),
+      home: LivrosPage(),
     );
   }
 }
