@@ -1,3 +1,7 @@
+lib/
+assets/
+pubspec.yaml
+
 workflows:
   android-workflow:
     name: Android Build
