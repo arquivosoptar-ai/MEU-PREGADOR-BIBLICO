@@ -1,5 +1,5 @@
 name: pregador_biblico
-description: Aplicativo bíblico
+description: Aplicativo Bíblico com ACF e Apócrifos
 publish_to: 'none'
 version: 1.0.0+1
 
