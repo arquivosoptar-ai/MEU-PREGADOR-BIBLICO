@@ -4,7 +4,7 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Obter dependências
+      - name: Get dependencies
         script: flutter pub get
       - name: Build APK
         script: flutter build apk --release
