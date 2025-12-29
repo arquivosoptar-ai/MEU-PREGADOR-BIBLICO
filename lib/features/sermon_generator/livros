@@ -1,1 +1,39 @@
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class LivrosPage extends StatelessWidget {
+  const LivrosPage({super.key});
+
+  Future<List<dynamic>> carregarLivros() async {
+    final texto = await rootBundle.loadString('assets/biblia/index.json');
+    final jsonData = json.decode(texto);
+    return [...jsonData['acf'], ...jsonData['apocrifos']];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Bíblia Sagrada')),
+      body: FutureBuilder<List<dynamic>>(
+        future: carregarLivros(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          final livros = snapshot.data!;
+          return ListView.builder(
+            itemCount: livros.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(livros[index]['nome']),
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+}
 
