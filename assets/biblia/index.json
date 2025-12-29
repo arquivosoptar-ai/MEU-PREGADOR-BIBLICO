@@ -1,0 +1,10 @@
+{
+  "acf": [
+    {
+      "id": "genesis",
+      "nome": "Gênesis",
+      "arquivo": "assets/biblia/acf/genesis.json"
+    }
+  ],
+  "apocrifos": []
+}
